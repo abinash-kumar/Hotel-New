@@ -12,3 +12,10 @@ $(window).scroll(function () {
     }
     iScrollPos = iCurScrollPos;
 });
+
+
+
+$('#footer').ready(function() {
+	var hght = $('#footer').height();
+	$('.footerSpace').css('height',hght);
+});

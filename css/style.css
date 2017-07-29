@@ -38,10 +38,81 @@
 		line-height: 1.5;
 	}
 	
+	.cstmBody{
+		background:#f2f2f2;
+		box-shadow: 0 10px 24px 0 rgba(0,0,0,.61);
+	}
 	.staticht{
 		height: 65px;
 		width:100%;
 		height: 130px;		
+	}
+	
+	
+	/* css for navbar animation  */
+	
+	@-webkit-keyframes flipInX {
+	  0% {
+		-webkit-transform: perspective(400px) rotateX(90deg);
+		transform: perspective(400px) rotateX(90deg);
+		opacity: 0;
+	  }
+
+	  40% {
+		-webkit-transform: perspective(400px) rotateX(-10deg);
+		transform: perspective(400px) rotateX(-10deg);
+	  }
+
+	  70% {
+		-webkit-transform: perspective(400px) rotateX(10deg);
+		transform: perspective(400px) rotateX(10deg);
+	  }
+
+		.fadeInUp {
+		  -webkit-animation-name: fadeInUp;
+		  animation-name: fadeInUp;
+		}
+	}
+	
+	/* animation ends here */
+	
+	.navLst li:hover .dorpDwn{
+		display: block;    
+	}
+	
+	
+		.dorpDwn{
+			box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
+			padding-bottom: 10px;
+			padding-top: 10px;
+			text-align: center ! important;
+			min-width: 200px;
+			display: none;
+			position: absolute;
+			top: 100%;
+			background: #fff;
+			animation: flipInX .50s linear;
+		}
+		
+	.dorpDwn a {
+		transition: 0.4s;
+		font-size: 1.1em;
+		color: #626262;
+		padding: 10px 5px;
+		text-decoration: none;
+		display: block;
+		text-align: left;
+		line-height:1;
+		text-align:center;
+	}
+	
+	.dorpDwn a:hover{
+		background:#ccc;
+		color:#fff;
+	}
+	
+	.dorpDwn a:not(:last-child) {
+		border-bottom: 1px solid #e9e9e9;
 	}
 	
 	.header{
@@ -103,11 +174,11 @@
 	}
 	
 	.grad {
-		background: #090f29; /* For browsers that do not support gradients */
-		background: -webkit-linear-gradient(#26262d, #494952); /* For Safari 5.1 to 6.0 */
-		background: -o-linear-gradient(#26262d, #494952); /* For Opera 11.1 to 12.0 */
-		background: -moz-linear-gradient(#26262d, #494952); /* For Firefox 3.6 to 15 */
-		background: linear-gradient(#26262d, #494952); /* Standard syntax */
+		background: #333; /* For browsers that do not support gradients */
+		/* background: -webkit-linear-gradient(#0d1640, #090f29); /* For Safari 5.1 to 6.0 */ 
+		/* background: -o-linear-gradient(#0d1640, #090f29); /* For Opera 11.1 to 12.0 */
+		/* background: -moz-linear-gradient(#0d1640, #090f29); /* For Firefox 3.6 to 15 */
+		/* background: linear-gradient(#0d1640, #090f29); /* Standard syntax */ 
 	}
 	
 	.cstmButton{
@@ -205,31 +276,14 @@
 	
 	.imgSpance img{
 		width:100%;
-		height:100%;
+		height: 477px;
 	}
 	
 	
 	.sldrNav:hover{
 		border-radius: 26px;
 	}
-	.sldrNav{
-		top:46%;
-		background:#fff;
-		position:absolute;
-		height:40px;
-		width:40px;
-		box-shadow: 5px 5px 25px 0 rgba(46,61,73,.4);
-		z-index:1000;
-		padding:5px;
-		transition:.2s;
-	}
-	
-	.sldrNavLeft{
-		left:30px;
-	}
-	.sldrNavRight{
-		right:30px;
-	}
+
 	
 	.sldrNav img{
 		width:100%;
@@ -273,7 +327,7 @@
 	}
 	
 	.cardFor{
-		background-color:#31313b;
+		background-color:#090f29;
 		color:#fff;
 		z-index:2;
 	}
@@ -471,12 +525,10 @@
 	
 	.trpyLft{
 		width:40%;
-		float:left;
 	}
 	.trpyRight{
 		width:60%;
 		height:350px;
-		float:right;
 		position:relative;
 	}
 	
@@ -507,7 +559,8 @@
 	
 	.awrdSlidr{
 		position:relative;
-		height: 350px;
+		height: 350px ! important;
+		width:100%;
 	}
 	.awrdSlidr> .awrdCard:nth-child(2) {
 		right:0px;
@@ -558,15 +611,69 @@
 		color:#3eb6e4;
 	}
 	.subscribe{
-		margin-bottom:8%;
+		padding-bottom:8%;
 	}
 	
 	.footer{
+		position:fixed;
+		bottom:0px;
+		z-index:-200;
+		right:0px;
+		left:0px;
 		height:350px;
-		background:#000;
+		background:#333;
 		color:#fff;
 		font-size:80px;
 		display:flex;
 		justify-content:center;
 		align-items:center;
 	}
+	
+	.slick-arrow:hover{
+		border-radius:50%;
+	}
+	
+	.regular .slick-arrow,.Testimnomial .slick-arrow,.awrdSldid .slick-arrow  {
+		font-size:0px;
+		outline:none;
+		border-style:none;
+		position:absolute;
+		background:#fff;
+		height:40px;
+		width:40px;
+		box-shadow: 5px 5px 25px 0 rgba(46,61,73,.4);
+		z-index:10;
+		padding:5px;
+		transition:.2s;
+	}
+	
+	.regular .slick-prev{
+		left:30px;
+		top:46%;		
+	}
+	.regular .slick-next{
+		right:30px;
+		top:46%;
+	}
+	.awrdSldid .slick-prev{
+		left:-30px;
+		top:46%;	
+		box-shadow: none;	
+	}
+	.awrdSldid .slick-next{
+		right:-30px;
+		top:46%;
+		box-shadow: none;
+	}	
+	
+	 .Testimnomial .slick-prev{
+		left:30px;
+		top:70%;
+	}
+	
+
+	.Testimnomial .slick-next{
+		right:30px;
+		top:70%;
+	}
+	
