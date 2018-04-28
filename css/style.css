@@ -169,7 +169,7 @@
 	}
 	
 	#nav{
-		transition:01s;
+		transition:.8s;
 	}
 	nav{		
 		width:80%;
